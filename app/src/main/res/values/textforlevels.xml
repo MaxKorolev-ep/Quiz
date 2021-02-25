@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="num0">Ноль</string>
+    <string name="num1">Один</string>
+    <string name="num2">Два</string>
+    <string name="num3">Три</string>
+    <string name="num4">Четыре</string>
+    <string name="num5">Пять</string>
+    <string name="num6">Шесть</string>
+    <string name="num7">Семь</string>
+    <string name="num8">Восемь</string>
+    <string name="num9">Девять</string>
+  </resources>
