@@ -6,7 +6,7 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {Client.class}, version  = 1, exportSchema = false)
+@Database(entities = {Client.class}, version  = 2, exportSchema = false)
 
 public abstract class AppDataBase extends RoomDatabase {
     public static final Object LOCK = new Object();

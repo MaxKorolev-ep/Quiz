@@ -10,6 +10,8 @@ import androidx.room.PrimaryKey;
 public class Client {
     @PrimaryKey(autoGenerate = true)
     private int id;
+    @ColumnInfo(name = "seconds1")
+    private int seconds1;
     @ColumnInfo (name = "name")
     private String name;
     @ColumnInfo (name = "level")
@@ -17,8 +19,9 @@ public class Client {
     @ColumnInfo (name = "time")
     private String time;
 
-    public Client(int id, String name, String level, String time) {
+    public Client(int id, int seconds1, String name, String level, String time) {
         this.id = id;
+        this.seconds1=seconds1;
         this.name = name;
         this.level = level;
         this.time = time;
@@ -26,7 +29,8 @@ public class Client {
 
 
     @Ignore
-    public Client(String name, String level, String time) {
+    public Client(int seconds1,String name, String level, String time) {
+        this.seconds1 = seconds1;
         this.name = name;
         this.level = level;
         this.time = time;
@@ -38,6 +42,14 @@ public class Client {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getSeconds1() {
+        return seconds1;
+    }
+
+    public void setSeconds1(int seconds1) {
+        this.seconds1 = seconds1;
     }
 
     public String getName() {

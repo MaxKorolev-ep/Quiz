@@ -19,7 +19,7 @@ public class AccountRank extends AppCompatActivity {
 private AppDataBase mydb;
     private TextView name, level, time;
     private RecyclerView recycler;
-    public DataBaseEditor dbEditor;
+  //  public DataBaseEditor dbEditor;
     private DataAdapter dbAdapter;
     private List<Client> listClient;
 
@@ -33,7 +33,7 @@ private AppDataBase mydb;
         time = findViewById(R.id.tv_time);
         recycler = findViewById(R.id.r_view);
 
-        dbEditor = new DataBaseEditor("String1", "String2", "String3", this);
+       // dbEditor = new DataBaseEditor("String1", "String2", "String3", this);
         init();
 
     }
@@ -50,6 +50,8 @@ private AppDataBase mydb;
             public void run() {
                 listClient = mydb.clientDAO().getClientRank();
                 AppExecutor.getInstance().getMainIO().execute(new Runnable() {
+
+
                     @Override
                     public void run() {
                         dbAdapter = new DataAdapter(listClient);

@@ -11,8 +11,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import database.AppDataBase;
-import database.AppExecutor;
-import database.Client;
 
 public class GameLevels extends AppCompatActivity {
 
@@ -22,7 +20,7 @@ public class GameLevels extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_levels);
-        init();
+
         //развернуть игру на весь экран - начало
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -139,23 +137,6 @@ public class GameLevels extends AppCompatActivity {
 
     }
 
-    private void init()
-    {
-
-        mydb = AppDataBase.getInstance(getApplicationContext());
-        AppExecutor.getInstance().getDiscIO().execute(new Runnable() {
-            @Override
-            public void run() {
-                AppExecutor.getInstance().getMainIO().execute(new Runnable() {
-                    @Override
-                    public void run() {
-                        Client client = new Client("Max", "Level 4", "00:01:03");
-                        mydb.clientDAO().insertClient(client);
-                    }
-                });
-            }
-        });
-    }
 
     //system btn BACK Start
     @Override

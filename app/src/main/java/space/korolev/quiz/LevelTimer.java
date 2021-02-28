@@ -22,6 +22,11 @@ public class LevelTimer {
     }
 
 
+    public int getSeconds()
+    {
+        return seconds;
+    }
+
     String runTimer() {
         final Handler handler = new Handler();
         handler.post(new Runnable() {
