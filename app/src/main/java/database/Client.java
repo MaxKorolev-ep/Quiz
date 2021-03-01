@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey;
 @Entity (tableName = "rank_list")
 
 public class Client {
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey(autoGenerate = false)
     private int id;
     @ColumnInfo(name = "seconds1")
     private int seconds1;
@@ -30,6 +30,7 @@ public class Client {
 
     @Ignore
     public Client(int seconds1,String name, String level, String time) {
+        this.id = id;
         this.seconds1 = seconds1;
         this.name = name;
         this.level = level;

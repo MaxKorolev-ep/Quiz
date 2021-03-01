@@ -24,39 +24,41 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
 
+import database.AppDataBase;
+import database.Client;
+
 public class Level1 extends AppCompatActivity {
 
     Dialog dialog;
   public   Dialog dialogEnd;
-
+    public Client client;
+    public AppDataBase mydb;
+    public DataBaseEditor dbEditor;
     public boolean timerStarted;
     public boolean timerFinish;
     public boolean timerCancel;
 
     public RoundTimer roundTimer;
-    public DataBaseEditor dbEditor;
+
 
     public boolean startLevel;
     public LevelTimer levelTimer;
 
-    public int seconds;
-    public boolean running;
-    public String time;
-
+    public int prev_sec;
     public int numLeft;
     public int numRight;
     public Array array = new Array(); // создаем новый объекст из класса Array
     public Random random = new Random();// создаем генерация чисел
     public int count = 0;// счетчик правильных ответов
+
     private long backPressedTime;
 
     private Toast backToast;
-    public Toast message;
+
 
     public final long millisInFuture = 3000;
     public final long countDownInterval = 300;
     public final int progressScale = (int)millisInFuture/100;
-    public long levelTime;
 
     //initialize View container
      ProgressBar pb_timeLeft;
@@ -68,9 +70,6 @@ public class Level1 extends AppCompatActivity {
      TextView tx_levels;
 
     //_________________________
-
-
-
 
 
 
@@ -113,9 +112,6 @@ public class Level1 extends AppCompatActivity {
         // округление углов на картинках - начало
         img_left.setClipToOutline(true);
         img_right.setClipToOutline(true);
-        // округление углов на картинках - конец
-
-
 
         //развернуть игру на весь экран - начало
         Window w = getWindow();
@@ -324,7 +320,8 @@ public class Level1 extends AppCompatActivity {
                     if (count == 20)
                     {
                         tvdend.setText(levelTimer.runTimer());
-                        dbEditor = new DataBaseEditor("Madx", "Levesfsdfsdl1", levelTimer.getSeconds(), context);
+                   //     init();
+                        dbEditor = new DataBaseEditor(1,1,"Madx", "Levsdfsdfsdfel1", levelTimer.getSeconds(), context);
                         startLevel=false;
                         levelTimer.resetSeconds();
                         dialogEnd.show();
@@ -418,7 +415,8 @@ public class Level1 extends AppCompatActivity {
                     if (count == 20)
                     {
                         tvdend.setText(levelTimer.runTimer());
-                        dbEditor = new DataBaseEditor("Madx", "Levsdfsdfsdfel1", levelTimer.getSeconds(), context);
+                    //    init();
+                        dbEditor = new DataBaseEditor(1,1,"Madx", "Levsdfsdfsdfel1", levelTimer.getSeconds(), context);
                         startLevel=false;
                         levelTimer.resetSeconds();
                         dialogEnd.show();

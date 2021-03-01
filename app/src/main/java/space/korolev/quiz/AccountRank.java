@@ -1,7 +1,9 @@
 package space.korolev.quiz;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -22,6 +24,10 @@ private AppDataBase mydb;
   //  public DataBaseEditor dbEditor;
     private DataAdapter dbAdapter;
     private List<Client> listClient;
+
+    private long backPressedTime;
+
+    private Toast backToast;
 
 
     @Override
@@ -61,5 +67,41 @@ private AppDataBase mydb;
             }
         });
     }
+
+
+    //system btn BACK Start
+    @Override
+    public void onBackPressed()
+    {
+
+        if (backPressedTime + 2000 > System.currentTimeMillis())
+        {
+            try
+            {
+                backToast.cancel();
+                Intent intent = new Intent(this,GameLevels.class);
+                startActivity(intent);finish();
+            }
+            catch (Exception e)
+            {
+
+            }
+        }
+        else
+        {
+            backToast = Toast.makeText(getBaseContext(),"Нажмите ещё раз, чтобы выйти из уровня",Toast.LENGTH_LONG);
+            backToast.show();
+        }
+        backPressedTime = System.currentTimeMillis();
+    }
+    //system btn BACK End
+
+
+
+
+
+
 }
+
+
 

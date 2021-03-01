@@ -23,6 +23,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
 
+import database.AppDataBase;
+import database.Client;
+
 public class Level2 extends AppCompatActivity {
 
     Dialog dialog;
@@ -31,6 +34,12 @@ public class Level2 extends AppCompatActivity {
     public boolean timerStarted;
     public boolean timerFinish;
     public boolean timerCancel;
+
+
+    public Client client;
+    public AppDataBase mydb;
+    public DataBaseEditor dbEditor;
+
 
     public RoundTimer roundTimer;
 
