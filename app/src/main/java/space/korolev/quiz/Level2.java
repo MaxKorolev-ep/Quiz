@@ -1,6 +1,7 @@
 package space.korolev.quiz;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -82,7 +83,7 @@ public class Level2 extends AppCompatActivity {
         // add array of progress end
 
 
-
+        Context context = Level2.this;
 
         //add animation start
         final Animation a = AnimationUtils.loadAnimation(Level2.this, R.anim.alpha);
@@ -325,11 +326,14 @@ public class Level2 extends AppCompatActivity {
                     }
                     if (count == 20)
                     {
-                      //  levelTimer.sendResult=true;
-                        tvdend.setText(levelTimer.runTimer());
-                        startLevel=false;
-                        levelTimer.resetSeconds();
-                        dialogEnd.show();
+                        if (count == 20)
+                        {
+                            tvdend.setText(levelTimer.runTimer());
+                            dbEditor = new DataBaseEditor(1,1,"Madx", "Levsdfsdfsdfel1", levelTimer.getSeconds(), context);
+                            startLevel=false;
+                            levelTimer.resetSeconds();
+                            dialogEnd.show();
+                        }
                     }
                     else
                     {
@@ -419,8 +423,8 @@ public class Level2 extends AppCompatActivity {
                     }
                     if (count == 20)
                     {
-                       // levelTimer.sendResult=true;
                         tvdend.setText(levelTimer.runTimer());
+                        dbEditor = new DataBaseEditor(1,1,"Madx", "Levsdfsdfsdfel1", levelTimer.getSeconds(), context);
                         startLevel=false;
                         levelTimer.resetSeconds();
                         dialogEnd.show();

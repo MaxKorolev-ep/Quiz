@@ -318,13 +318,12 @@ public class Level1 extends AppCompatActivity {
                             }
                         }
                     if (count == 20)
-                    {
-                        tvdend.setText(levelTimer.runTimer());
-                   //     init();
-                        dbEditor = new DataBaseEditor(1,1,"Madx", "Levsdfsdfsdfel1", levelTimer.getSeconds(), context);
-                        startLevel=false;
-                        levelTimer.resetSeconds();
-                        dialogEnd.show();
+                        {
+                            tvdend.setText(levelTimer.runTimer());
+                            dbEditor = new DataBaseEditor(1,1,"Madx", "Levsdfsdfsdfel1", levelTimer.getSeconds(), context);
+                            startLevel=false;
+                            levelTimer.resetSeconds();
+                            dialogEnd.show();
                     }
                     else
                     {

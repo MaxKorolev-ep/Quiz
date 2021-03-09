@@ -244,7 +244,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/text_question"
+                        android:id="@+id/text_setquest"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -265,50 +265,53 @@
                         android:layout_weight="1"
                         android:background="@drawable/btn_stroke_white_press_blue"
                         android:gravity="start"
+                        android:onClick="onClickListener"
                         android:padding="5dp"
                         android:text="@string/text_left"
                         android:textColor="@color/white"
                         android:textSize="22dp"></TextView>
 
                     <TextView
+                        android:id="@+id/text_set2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id = "@+id/text_set2"
-                        android:text = "@string/text_left"
-                        android:textColor="@color/white"
-                        android:textSize="22sp"
                         android:layout_marginTop="10dp"
-                        android:padding="5dp"
                         android:layout_weight="1"
-                        android:gravity="start"
                         android:background="@drawable/btn_stroke_white_press_blue"
-                        ></TextView>
+                        android:gravity="start"
+                        android:onClick="onClickListener"
+                        android:padding="5dp"
+                        android:text="@string/text_left"
+                        android:textColor="@color/white"
+                        android:textSize="22sp"></TextView>
+
                     <TextView
+                        android:id="@+id/text_set3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id = "@+id/text_set3"
-                        android:text = "@string/text_left"
-                        android:textColor="@color/white"
-                        android:textSize="22sp"
                         android:layout_marginTop="10dp"
-                        android:padding="5dp"
                         android:layout_weight="1"
-                        android:gravity="start"
                         android:background="@drawable/btn_stroke_white_press_blue"
-                        ></TextView>
+                        android:gravity="start"
+                        android:onClick="onClickListener"
+                        android:padding="5dp"
+                        android:text="@string/text_left"
+                        android:textColor="@color/white"
+                        android:textSize="22sp"></TextView>
+
                     <TextView
+                        android:id="@+id/text_set4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id = "@+id/text_set4"
-                        android:text = "@string/text_left"
-                        android:textColor="@color/white"
-                        android:textSize="22sp"
                         android:layout_marginTop="10dp"
-                        android:padding="5dp"
                         android:layout_weight="1"
-                        android:gravity="start"
                         android:background="@drawable/btn_stroke_white_press_blue"
-                        ></TextView>
+                        android:gravity="start"
+                        android:onClick="onClickListener"
+                        android:padding="5dp"
+                        android:text="@string/text_left"
+                        android:textColor="@color/white"
+                        android:textSize="22sp"></TextView>
 
 
                 </LinearLayout>
