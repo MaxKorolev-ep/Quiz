@@ -1,4 +1,4 @@
-package space.korolev.quiz;
+package space.korolev.quiz.Activities;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -26,62 +26,59 @@ import java.util.Random;
 
 import database.AppDataBase;
 import database.Client;
+import space.korolev.quiz.Array;
+import space.korolev.quiz.DataBaseEditor;
+import space.korolev.quiz.LevelTimer;
+import space.korolev.quiz.R;
 
-public class Level1 extends AppCompatActivity {
+public class Level3 extends AppCompatActivity {
 
     Dialog dialog;
-  public   Dialog dialogEnd;
-    public Client client;
-    public AppDataBase mydb;
-    public DataBaseEditor dbEditor;
+    Dialog dialogEnd;
+
     public boolean timerStarted;
     public boolean timerFinish;
     public boolean timerCancel;
 
-    public RoundTimer roundTimer;
+    public Client client;
+    public AppDataBase mydb;
+    public DataBaseEditor dbEditor;
 
+    public RoundTimer roundTimer;
 
     public boolean startLevel;
     public LevelTimer levelTimer;
 
-    public int prev_sec;
     public int numLeft;
     public int numRight;
     public Array array = new Array(); // создаем новый объекст из класса Array
     public Random random = new Random();// создаем генерация чисел
     public int count = 0;// счетчик правильных ответов
-
     private long backPressedTime;
 
     private Toast backToast;
 
-
     public final long millisInFuture = 3000;
-    public final long countDownInterval = 300;
+    public  final long countDownInterval = 500;
     public final int progressScale = (int)millisInFuture/100;
 
     //initialize View container
-     ProgressBar pb_timeLeft;
-     ImageView img_left;
-     ImageView img_right;
+    ProgressBar pb_timeLeft;
+    ImageView img_left;
+    ImageView img_right;
+    TextView tv_levels;
+    TextView tv;
+    public  TextView tvdend;
     public TextView tv_levelTime;
-     TextView tv;
-   public  TextView tvdend;
-     TextView tx_levels;
 
     //_________________________
 
-
-
     @Override
-        protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.universal);
-          //Устанавливаем текст tx_level
-        Context context = Level1.this;
-
-        // add array of progress start\
-         final int[] progress = {
+// add array of progress start\
+        final int[] progress = {
                 R.id.point1,R.id.point2, R.id.point3, R.id.point4, R.id.point5, R.id.point6, R.id.point7,
                 R.id.point8, R.id.point9,R.id.point10,R.id.point11,R.id.point12,R.id.point13,R.id.point14,R.id.point15,
                 R.id.point16,R.id.point17,R.id.point18,R.id.point19,R.id.point20,};
@@ -89,19 +86,19 @@ public class Level1 extends AppCompatActivity {
 
 
         //add animation start
-         final Animation a = AnimationUtils.loadAnimation(Level1.this, R.anim.alpha);
+        final Animation a = AnimationUtils.loadAnimation(Level3.this, R.anim.alpha);
         //add animation end
 
-        tv_levelTime = findViewById(R.id.tv_roundtime);
-        tx_levels = findViewById(R.id.tx_levels);
-        tx_levels.setText(R.string.level1);
 
+        tv_levelTime = findViewById(R.id.tv_roundtime);
+        tv_levels = findViewById(R.id.tx_levels);
+        tv_levels.setText(R.string.level3);
+
+        Context context = Level3.this;
 
         pb_timeLeft = findViewById(R.id.pb_TimeLeft);
         //timer settings
-       roundTimer = new RoundTimer(millisInFuture, countDownInterval, pb_timeLeft,timerCancel);
-
-
+        roundTimer = new RoundTimer(millisInFuture, countDownInterval, pb_timeLeft,timerCancel);
         //______________________________
 
 
@@ -112,6 +109,9 @@ public class Level1 extends AppCompatActivity {
         // округление углов на картинках - начало
         img_left.setClipToOutline(true);
         img_right.setClipToOutline(true);
+        // округление углов на картинках - конец
+
+
 
         //развернуть игру на весь экран - начало
         Window w = getWindow();
@@ -123,6 +123,8 @@ public class Level1 extends AppCompatActivity {
         dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);//hide a title
         dialog.setContentView(R.layout.previewdialog);
+        ImageView imgd = dialog.findViewById(R.id.previewimg1);
+        imgd.setImageResource(R.drawable.previewlevel3img);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));//transparent background of dialog wnd
         dialog.setCancelable(false); //окно нельзя закрыть кропкой назад
 
@@ -133,7 +135,7 @@ public class Level1 extends AppCompatActivity {
             public void onClick(View v) {
                 //обработка нажатия кнопки - начало
                 try {
-                    Intent intent = new Intent(Level1.this,GameLevels.class);
+                    Intent intent = new Intent(Level3.this,GameLevels.class);
                     startActivity(intent);
                     finish();
                 }
@@ -141,7 +143,7 @@ public class Level1 extends AppCompatActivity {
                 }
                 dialog.dismiss();//close dialog wnd
             }
-                //обработка нажатия кнопки - конец
+            //обработка нажатия кнопки - конец
         });
         //кнопка, которая закрывает диалог окно - конец
 
@@ -153,11 +155,11 @@ public class Level1 extends AppCompatActivity {
                 //обработка нажатия кнопки - начало
                 //LEVEL TIMER INITIALIZE
                 startLevel=true;
-                levelTimer= new LevelTimer(tv_levelTime,getResources().getString(R.string.levelsucces), getResources().getString(R.string.levelendone),startLevel);
+                levelTimer= new LevelTimer(tv_levelTime,getResources().getString(R.string.levelsucces), getResources().getString(R.string.levelendtwo),startLevel);
                 levelTimer.runTimer();
                 //__________________________________________
-
                 dialog.dismiss();//close dialog wnd
+
 
             }
             //обработка нажатия кнопки - конец
@@ -172,7 +174,6 @@ public class Level1 extends AppCompatActivity {
         dialogEnd.setContentView(R.layout.dialogend);
         tvdend = dialogEnd.findViewById(R.id.textdescrend1);
         tvdend.setText("ERROR");
-
         dialogEnd.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));//transparent background of dialog wnd
         dialogEnd.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
                 WindowManager.LayoutParams.MATCH_PARENT);
@@ -185,7 +186,7 @@ public class Level1 extends AppCompatActivity {
             public void onClick(View v) {
                 //обработка нажатия кнопки - начало
                 try {
-                    Intent intent = new Intent(Level1.this,GameLevels.class);
+                    Intent intent = new Intent(Level3.this,GameLevels.class);
                     startActivity(intent);
                     finish();
                 }
@@ -205,7 +206,7 @@ public class Level1 extends AppCompatActivity {
             public void onClick(View v) {
                 //обработка нажатия кнопки - начало
                 try {
-                    Intent intent = new Intent(Level1.this,Level2.class);
+                    Intent intent = new Intent(Level3.this, Level3.class);
                     startActivity(intent);
                     finish();
                 }
@@ -228,7 +229,7 @@ public class Level1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Level1.this,GameLevels.class);
+                    Intent intent = new Intent(Level3.this,GameLevels.class);
                     startActivity(intent);
                     finish();
                 }
@@ -241,18 +242,16 @@ public class Level1 extends AppCompatActivity {
 
 
 
-        numLeft = random.nextInt(10);//любое число 0..9
-        img_left.setImageResource(array.images1[numLeft]);//set image
+        numLeft = random.nextInt(20);//любое число 0..9
+        img_left.setImageResource(array.images3[numLeft]);//set image
 
-
-        numRight = random.nextInt(10);//любое число 0..9
+        numRight = random.nextInt(20);//любое число 0..9
         //Цикл, проверяющий равенство чисел
-        while (numLeft == numRight)
+        while (array.power3[numLeft] == array.power3[numRight])
         {
-            numRight = random.nextInt(10);
+            numRight = random.nextInt(20);
         }
-
-        img_right.setImageResource(array.images1[numRight]);
+        img_right.setImageResource(array.images3[numRight]);
 
 
         //нажатие на left картинку start
@@ -263,7 +262,7 @@ public class Level1 extends AppCompatActivity {
                 if (event.getAction() == MotionEvent.ACTION_DOWN)
                 {
                     img_right.setEnabled(false);
-                    if(numLeft>numRight)img_left.setImageResource(R.drawable.img_true);
+                    if(array.power3[numLeft] > array.power3[numRight])img_left.setImageResource(R.drawable.img_true);
                     else img_left.setImageResource(R.drawable.img_false);
 
                     if (timerStarted == true) {
@@ -282,103 +281,9 @@ public class Level1 extends AppCompatActivity {
                     roundTimer.start();
                     timerStarted=true;
 
-                //__________________________________________________
+                    //__________________________________________________
 
-                if(numLeft>numRight)
-                    {
-                        if(count<20) count=count+1;
-                            //закрашиваем прогресс серым цветом
-                        for (int i=0; i<20; i++) {
-                            tv = findViewById(progress[i]);
-                            tv.setBackgroundResource(R.drawable.style_points);
-                        }
-                        //закрашиваем правильные ответы зеленым
-                        for (int i=0; i<count; i++) {
-                            tv = findViewById(progress[i]);
-                            tv.setBackgroundResource(R.drawable.style_points_green);
-                        }
-
-                    }
-                    else
-                        {
-                            if (count > 0)
-                            {
-                                if (count == 1) count = 0;
-                                else count = count - 2;
-                            }
-
-                            for (int i=0; i<=19; i++) {
-                                tv = findViewById(progress[i]);
-                                tv.setBackgroundResource(R.drawable.style_points);
-                            }
-                            //закрашиваем правильные ответы зеленым
-                            for (int i=0; i<count; i++) {
-                                tv = findViewById(progress[i]);
-                                tv.setBackgroundResource(R.drawable.style_points_green);
-                            }
-                        }
-                    if (count == 20)
-                        {
-                            tvdend.setText(levelTimer.runTimer());
-                            dbEditor = new DataBaseEditor(1,1,"Madx", "Levsdfsdfsdfel1", levelTimer.getSeconds(), context);
-                            startLevel=false;
-                            levelTimer.resetSeconds();
-                            dialogEnd.show();
-                    }
-                    else
-                    {
-                        numLeft = random.nextInt(10);//любое число 0..9
-                        img_left.setImageResource(array.images1[numLeft]);//set image
-                        img_left.startAnimation(a);
-
-
-                        numRight = random.nextInt(10);//любое число 0..9
-                        //Цикл, проверяющий равенство чисел
-                        while (numLeft == numRight)
-                        {
-                            numRight = random.nextInt(10);
-                        }
-
-                        img_right.setImageResource(array.images1[numRight]);
-                        img_right.startAnimation(a);
-                        img_right.setEnabled(true);
-                    }
-                }
-                //условие касания картинки - end
-                return true;
-            }
-        });
-        //нажатие на left картинку end
-
-        //нажатие на right картинку start
-        img_right.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                //условие касания картинки - начало
-                if (event.getAction() == MotionEvent.ACTION_DOWN)
-                {
-                    img_left.setEnabled(false);
-                    if(numLeft<numRight)img_right.setImageResource(R.drawable.img_true);
-                    else img_right.setImageResource(R.drawable.img_false);
-
-                    if (timerStarted == true) {
-                        roundTimer.cancel();
-                        timerCancel=true;
-                        timerStarted=false;
-                        timerCancel=false;
-                    }
-                }
-                else if (event.getAction() == MotionEvent.ACTION_UP)
-                {
-                    // TIMER Start
-                    roundTimer = new RoundTimer(millisInFuture, countDownInterval, pb_timeLeft,timerCancel);
-                    roundTimer.start();
-                    timerStarted=true;
-
-                    //__________________
-
-
-                    if(numRight>numLeft)
+                    if(array.power3[numLeft] > array.power3[numRight])
                     {
                         if(count<20) count=count+1;
                         //закрашиваем прогресс серым цветом
@@ -414,7 +319,6 @@ public class Level1 extends AppCompatActivity {
                     if (count == 20)
                     {
                         tvdend.setText(levelTimer.runTimer());
-                    //    init();
                         dbEditor = new DataBaseEditor(1,1,"Madx", "Levsdfsdfsdfel1", levelTimer.getSeconds(), context);
                         startLevel=false;
                         levelTimer.resetSeconds();
@@ -422,19 +326,109 @@ public class Level1 extends AppCompatActivity {
                     }
                     else
                     {
-                        numLeft = random.nextInt(10);//любое число 0..9
-                        img_left.setImageResource(array.images1[numLeft]);//set image
+                        numLeft = random.nextInt(20);//любое число 0..9
+                        img_left.setImageResource(array.images3[numLeft]);//set image
                         img_left.startAnimation(a);
 
-
-                        numRight = random.nextInt(10);//любое число 0..9
+                        numRight = random.nextInt(20);//любое число 0..9
                         //Цикл, проверяющий равенство чисел
-                        while (numLeft == numRight)
+                        while (array.power3[numLeft] == array.power3[numRight])
                         {
-                            numRight = random.nextInt(10);
+                            numRight = random.nextInt(20);
+                        }
+                        img_right.setImageResource(array.images3[numRight]);
+                        img_right.startAnimation(a);
+                        img_right.setEnabled(true);
+                    }
+                }
+                //условие касания картинки - end
+                return true;
+            }
+        });
+        //нажатие на left картинку end
+
+        //нажатие на right картинку start
+        img_right.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                //условие касания картинки - начало
+                if (event.getAction() == MotionEvent.ACTION_DOWN)
+                {
+                    img_left.setEnabled(false);
+                    if(array.power3[numLeft] < array.power3[numRight])img_right.setImageResource(R.drawable.img_true);
+                    else img_right.setImageResource(R.drawable.img_false);
+
+                    if (timerStarted == true) {
+                        roundTimer.cancel();
+                        timerCancel=true;
+                        timerStarted=false;
+                        timerCancel=false;
+                    }
+                }
+                else if (event.getAction() == MotionEvent.ACTION_UP)
+                {
+                    // TIMER Start
+                    roundTimer = new RoundTimer(millisInFuture, countDownInterval, pb_timeLeft,timerCancel);
+                    roundTimer.start();
+                    timerStarted=true;
+
+                    //__________________
+
+
+                    if(array.power3[numLeft] < array.power3[numRight])
+                    {
+                        if(count<20) count=count+1;
+                        //закрашиваем прогресс серым цветом
+                        for (int i=0; i<20; i++) {
+                            tv = findViewById(progress[i]);
+                            tv.setBackgroundResource(R.drawable.style_points);
+                        }
+                        //закрашиваем правильные ответы зеленым
+                        for (int i=0; i<count; i++) {
+                            tv = findViewById(progress[i]);
+                            tv.setBackgroundResource(R.drawable.style_points_green);
                         }
 
-                        img_right.setImageResource(array.images1[numRight]);
+                    }
+                    else
+                    {
+                        if (count > 0)
+                        {
+                            if (count == 1) count = 0;
+                            else count = count - 2;
+                        }
+
+                        for (int i=0; i<=19; i++) {
+                            tv = findViewById(progress[i]);
+                            tv.setBackgroundResource(R.drawable.style_points);
+                        }
+                        //закрашиваем правильные ответы зеленым
+                        for (int i=0; i<count; i++) {
+                            tv = findViewById(progress[i]);
+                            tv.setBackgroundResource(R.drawable.style_points_green);
+                        }
+                    }
+                    if (count == 20)
+                    {
+                        tvdend.setText(levelTimer.runTimer());
+                        dbEditor = new DataBaseEditor(1,1,"Madx", "Levsdfsdfsdfel1", levelTimer.getSeconds(), context);
+                        startLevel=false;
+                        levelTimer.resetSeconds();
+                        dialogEnd.show();
+                    }
+                    else
+                    {
+                        numLeft = random.nextInt(20);//любое число 0..9
+                        img_left.setImageResource(array.images3[numLeft]);//set image
+                        img_left.startAnimation(a);
+
+                        numRight = random.nextInt(20);//любое число 0..9
+                        //Цикл, проверяющий равенство чисел
+                        while (array.power3[numLeft] == array.power3[numRight])
+                        {
+                            numRight = random.nextInt(20);
+                        }
+                        img_right.setImageResource(array.images3[numRight]);
                         img_right.startAnimation(a);
                         img_left.setEnabled(true);
                     }
@@ -456,7 +450,7 @@ public class Level1 extends AppCompatActivity {
                 R.id.point1,R.id.point2, R.id.point3, R.id.point4, R.id.point5, R.id.point6, R.id.point7,
                 R.id.point8, R.id.point9,R.id.point10,R.id.point11,R.id.point12,R.id.point13,R.id.point14,R.id.point15,
                 R.id.point16,R.id.point17,R.id.point18,R.id.point19,R.id.point20,};
-        final Animation a = AnimationUtils.loadAnimation(Level1.this, R.anim.alpha);
+        final Animation a = AnimationUtils.loadAnimation(Level3.this, R.anim.alpha);
 
         /**
          * @param millisInFuture    The number of millis in the future from the call
@@ -497,18 +491,18 @@ public class Level1 extends AppCompatActivity {
                 tv.setBackgroundResource(R.drawable.style_points_green);
             }
 
-            numLeft = random.nextInt(10);//любое число 0..9
-            img_left.setImageResource(array.images1[numLeft]);//set image
+            numLeft = random.nextInt(20);//любое число 0..9
+            img_left.setImageResource(array.images3[numLeft]);//set image
             img_left.startAnimation(a);
 
 
-            numRight = random.nextInt(10);//любое число 0..9
+            numRight = random.nextInt(20);//любое число 0..9
             //Цикл, проверяющий равенство чисел
-            while (numLeft == numRight) {
-                numRight = random.nextInt(10);
+            while (array.power3[numLeft] == array.power3[numRight]) {
+                numRight = random.nextInt(20);
             }
 
-            img_right.setImageResource(array.images1[numRight]);
+            img_right.setImageResource(array.images3[numRight]);
             img_right.startAnimation(a);
 
             roundTimer = new RoundTimer(millisInFuture, countDownInterval, pb_timeLeft,timerCancel);
@@ -532,7 +526,7 @@ public class Level1 extends AppCompatActivity {
             try
             {
                 backToast.cancel();
-                Intent intent = new Intent(Level1.this,GameLevels.class);
+                Intent intent = new Intent(Level3.this,GameLevels.class);
                 startActivity(intent);finish();
             }
             catch (Exception e)
@@ -551,5 +545,3 @@ public class Level1 extends AppCompatActivity {
 
 
 }
-
-

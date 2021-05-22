@@ -1,4 +1,4 @@
-package space.korolev.quiz;
+package space.korolev.quiz.Activities;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -18,6 +18,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import space.korolev.quiz.DataBaseEditor;
+import space.korolev.quiz.LevelTimer;
+import space.korolev.quiz.LogicNumber4Lines;
+import space.korolev.quiz.R;
 
 public class Level4 extends AppCompatActivity {
 
@@ -41,7 +46,7 @@ public class Level4 extends AppCompatActivity {
     private long backPressedTime;
 
     public String resultText;
-    public final long millisInFuture = 3000;
+    public final long millisInFuture = 4000;
     public  final long countDownInterval = 500;
     public final int progressScale = (int)millisInFuture/100;
 

@@ -18,7 +18,7 @@ public class Array{
             new Number(R.drawable.onelevel_eight,8),
             new Number(R.drawable.onelevel_nine,9),
     };*/
-    final int[] images1 = {
+    public final int[] images1 = {
             R.drawable.onelevel_null,
             R.drawable.onelevel_one,
             R.drawable.onelevel_two,
@@ -32,7 +32,7 @@ public class Array{
             };
     //массив для первого урованя - начало
 
-      final int[] texts1 = {
+     public final int[] texts1 = {
           R.string.num0,
           R.string.num1,
           R.string.num2,
@@ -47,7 +47,7 @@ public class Array{
     //массив для первого урованя - конец
 
     //массив для 2 урованя - начало
-    final int[] images2 = {
+    public final int[] images2 = {
             R.drawable.twolevel_3,
             R.drawable.twolevel_7,
             R.drawable.twolevel_9,
@@ -62,7 +62,7 @@ public class Array{
     //массив для 2 урованя - конец
 
     //массив для 3 урованя - начало
-    final int[] images3 = {
+    public final int[] images3 = {
             R.drawable.onelevel_null,
             R.drawable.onelevel_one,
             R.drawable.onelevel_two,
@@ -85,7 +85,7 @@ public class Array{
             R.drawable.threelevel_ten
     };
 
-    final int[] power3 = {
+    public final int[] power3 = {
             0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
             1, 2, 3, 4, 5, 6, 7, 8, 9, 10
     };

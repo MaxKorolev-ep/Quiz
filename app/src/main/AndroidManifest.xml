@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +21,7 @@
         </activity>
 
         <activity
-            android:name=".GameLevels"
+            android:name=".Activities.GameLevels"
             android:screenOrientation="portrait">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -29,7 +29,7 @@
         </activity>
 
         <activity
-            android:name=".Level1"
+            android:name=".Activities.Level1"
             android:screenOrientation="portrait">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -37,7 +37,7 @@
         </activity>
 
         <activity
-            android:name=".Level2"
+            android:name=".Activities.Level2"
             android:screenOrientation="portrait">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -45,7 +45,7 @@
         </activity>
 
         <activity
-            android:name=".Level3"
+            android:name=".Activities.Level3"
             android:screenOrientation="portrait">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -53,7 +53,7 @@
         </activity>
 
         <activity
-            android:name=".Level4"
+            android:name=".Activities.Level4"
             android:screenOrientation="portrait">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />

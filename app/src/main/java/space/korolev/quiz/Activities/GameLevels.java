@@ -1,4 +1,4 @@
-package space.korolev.quiz;
+package space.korolev.quiz.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import database.AppDataBase;
+import space.korolev.quiz.AccountRank;
+import space.korolev.quiz.R;
 
 public class GameLevels extends AppCompatActivity {
 
@@ -33,7 +35,7 @@ public class GameLevels extends AppCompatActivity {
             public void onClick(View v) {
                 try
                 {
-                    Intent intent = new Intent(GameLevels.this,MainActivity.class);
+                    Intent intent = new Intent(GameLevels.this, MainActivity.class);
                     startActivity(intent);finish();
                 }
                 catch (Exception e)

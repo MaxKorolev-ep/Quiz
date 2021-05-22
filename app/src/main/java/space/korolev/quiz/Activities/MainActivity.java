@@ -1,4 +1,4 @@
-package space.korolev.quiz;
+package space.korolev.quiz.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +17,7 @@ import database.AppDataBase;
 import database.AppExecutor;
 import database.Client;
 import database.DataAdapter;
+import space.korolev.quiz.R;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
                try
                 {
-                    Intent intent = new Intent(MainActivity.this,GameLevels.class);
+                    Intent intent = new Intent(MainActivity.this, GameLevels.class);
                     startActivity(intent);finish();
                 }
                 catch (Exception e)

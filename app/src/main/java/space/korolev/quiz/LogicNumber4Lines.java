@@ -15,7 +15,7 @@ public class LogicNumber4Lines {
     char[]  mathOp = {'*','/','+','-'};
 
 
-    LogicNumber4Lines(TextView question,TextView var1,TextView var2,TextView var3,TextView var4, int n) {
+    public LogicNumber4Lines(TextView question, TextView var1, TextView var2, TextView var3, TextView var4, int n) {
         mathExpression (n);
         arrFunc();
         var1.setText(arrText[0]);

@@ -15,6 +15,7 @@ import database.AppDataBase;
 import database.AppExecutor;
 import database.Client;
 import database.DataAdapter;
+import space.korolev.quiz.Activities.GameLevels;
 
 public class AccountRank extends AppCompatActivity {
 
@@ -79,7 +80,7 @@ private AppDataBase mydb;
             try
             {
                 backToast.cancel();
-                Intent intent = new Intent(this,GameLevels.class);
+                Intent intent = new Intent(this, GameLevels.class);
                 startActivity(intent);finish();
             }
             catch (Exception e)

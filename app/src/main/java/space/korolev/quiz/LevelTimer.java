@@ -9,7 +9,7 @@ public class LevelTimer {
     public String time, lvlsc, descr, finalstr;
     TextView tv_levelTime;
 
-    LevelTimer(TextView tv_lvlTime, String levelsucces, String lvldescr, boolean run) {
+    public LevelTimer(TextView tv_lvlTime, String levelsucces, String lvldescr, boolean run) {
         tv_levelTime=tv_lvlTime;
         descr=lvldescr;
         running=run;
@@ -27,7 +27,7 @@ public class LevelTimer {
         return seconds;
     }
 
-    String runTimer() {
+    public String runTimer() {
         final Handler handler = new Handler();
         handler.post(new Runnable() {
             @Override

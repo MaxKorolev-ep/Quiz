@@ -1,4 +1,4 @@
-package space.korolev.quiz;
+package space.korolev.quiz.Activities;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -26,6 +26,10 @@ import java.util.Random;
 
 import database.AppDataBase;
 import database.Client;
+import space.korolev.quiz.Array;
+import space.korolev.quiz.DataBaseEditor;
+import space.korolev.quiz.LevelTimer;
+import space.korolev.quiz.R;
 
 public class Level2 extends AppCompatActivity {
 
