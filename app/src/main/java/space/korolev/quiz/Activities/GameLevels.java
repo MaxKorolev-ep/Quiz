@@ -136,6 +136,46 @@ public class GameLevels extends AppCompatActivity {
         });
         //btn 4 lvl = end
 
+        //btn 5 lvl = start
+        TextView textView5 = (TextView)findViewById(R.id.textView5);
+        textView5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try
+                {
+
+                    Intent intent = new Intent(GameLevels.this,Level5.class);
+                    startActivity(intent);finish();
+
+                }
+                catch (Exception e)
+                {
+
+                }
+            }
+        });
+        //btn 5 lvl = end
+
+        //btn 6 lvl = start
+        TextView textView6 = (TextView)findViewById(R.id.textView6);
+        textView6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try
+                {
+
+                    Intent intent = new Intent(GameLevels.this,GeoLvl1.class);
+                    startActivity(intent);finish();
+
+                }
+                catch (Exception e)
+                {
+
+                }
+            }
+        });
+        //btn 6 lvl = end
+
 
     }
 
