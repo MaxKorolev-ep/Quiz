@@ -106,6 +106,7 @@
     <string-array name="asiaCountries">
 
         <item>Азербайджан</item>
+        <item>Баку</item>
         <item>Армения</item>
         <item>Ереван</item>
         <item>Афганистан</item>
@@ -308,6 +309,7 @@
         <item>Перу</item>
         <item>Лима</item>
         <item>Суринам</item>
+        <item>Парамарибо</item>
         <item>Уругвай</item>
         <item>Монтевидео</item>
         <item>Фолклендские острова</item>
