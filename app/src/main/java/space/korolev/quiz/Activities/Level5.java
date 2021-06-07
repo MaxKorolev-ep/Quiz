@@ -36,6 +36,7 @@ public class Level5 extends AppCompatActivity {
 
     public DataBaseEditor dbEditor;
 
+    public SetBackColor setBackColor;
     public RoundTimer roundTimer;
 
     public boolean startLevel;
@@ -50,27 +51,26 @@ public class Level5 extends AppCompatActivity {
 
     //settings of timer
     public final long millisInFuture = 6000;
-    public  final long countDownInterval = 500;
-    public final int progressScale = (int)millisInFuture/100;
+    public final long countDownInterval = 500;
+    public final int progressScale = (int) millisInFuture / 100;
 
     //initialize View container
     ProgressBar pb_timeLeft;
     TextView tv_levels;
     TextView tv;
-    public  TextView tvdend;
+    public TextView tvdend;
     public TextView tv_levelTime;
+    public TextView[] vars;
 
-public TextView quest, var1,var2,var3,var4;
+    public TextView quest, var1, var2, var3, var4;
 
     public LogicNumber4Lines logNum;
     // add array of progress start\
     public int[] progress = {
-            R.id.point1,R.id.point2, R.id.point3, R.id.point4, R.id.point5, R.id.point6, R.id.point7,
-            R.id.point8, R.id.point9,R.id.point10,R.id.point11,R.id.point12,R.id.point13,R.id.point14,R.id.point15,
-            R.id.point16,R.id.point17,R.id.point18,R.id.point19,R.id.point20,};
+            R.id.point1, R.id.point2, R.id.point3, R.id.point4, R.id.point5, R.id.point6, R.id.point7,
+            R.id.point8, R.id.point9, R.id.point10, R.id.point11, R.id.point12, R.id.point13, R.id.point14, R.id.point15,
+            R.id.point16, R.id.point17, R.id.point18, R.id.point19, R.id.point20,};
     // add array of progress end
-
-
 
 
     @Override
@@ -82,12 +82,13 @@ public TextView quest, var1,var2,var3,var4;
         var2 = findViewById(R.id.text_set2);
         var3 = findViewById(R.id.text_set3);
         var4 = findViewById(R.id.text_set4);
+        vars = new TextView[]{var1, var2, var3, var4};
 
         Context context = Level5.this;
 
         //initialize logic calculator, n = 1..2 (difficult)
         logNum = new LogicNumber4Lines(quest, var1, var2, var3, var4, difficult);
-        resultText=logNum.arrLine[0];
+        resultText = logNum.arrLine[0];
 
         // add array of progress start\
 
@@ -98,12 +99,12 @@ public TextView quest, var1,var2,var3,var4;
 
         pb_timeLeft = findViewById(R.id.pb_TimeLeft);
         //timer settings
-        roundTimer = new RoundTimer(millisInFuture, countDownInterval, pb_timeLeft,timerCancel);
+        roundTimer = new RoundTimer(millisInFuture, countDownInterval, pb_timeLeft, timerCancel);
         //______________________________
 
         //развернуть игру на весь экран - начало
         Window w = getWindow();
-        w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //развернуть игру на весь экран - конец
 
         //вызов диалогового окна в начале игры - начало
@@ -116,17 +117,16 @@ public TextView quest, var1,var2,var3,var4;
         dialog.setCancelable(false); //окно нельзя закрыть кропкой назад
 
         //кнопка, которая закрывает диалог окно - начало
-        TextView btnclose = (TextView)dialog.findViewById(R.id.btnclose);
+        TextView btnclose = (TextView) dialog.findViewById(R.id.btnclose);
         btnclose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //обработка нажатия кнопки - начало
                 try {
-                    Intent intent = new Intent(Level5.this,GameLevels.class);
+                    Intent intent = new Intent(Level5.this, GameLevels.class);
                     startActivity(intent);
                     finish();
-                }
-                catch (Exception e){
+                } catch (Exception e) {
                 }
                 dialog.dismiss();//close dialog wnd
             }
@@ -141,8 +141,8 @@ public TextView quest, var1,var2,var3,var4;
             public void onClick(View v) {
                 //обработка нажатия кнопки - начало
                 //LEVEL TIMER INITIALIZE
-                startLevel=true;
-                levelTimer= new LevelTimer(tv_levelTime,getResources().getString(R.string.levelsucces), getResources().getString(R.string.levelendtwo),startLevel);
+                startLevel = true;
+                levelTimer = new LevelTimer(tv_levelTime, getResources().getString(R.string.levelsucces), getResources().getString(R.string.levelendtwo), startLevel);
                 levelTimer.runTimer();
                 //__________________________________________
                 dialog.dismiss();//close dialog wnd
@@ -167,17 +167,16 @@ public TextView quest, var1,var2,var3,var4;
         dialogEnd.setCancelable(false); //окно нельзя закрыть кропкой назад
 
         //кнопка, которая закрывает диалог окно - начало
-        TextView btnclose2 = (TextView)dialogEnd.findViewById(R.id.btnclose);
+        TextView btnclose2 = (TextView) dialogEnd.findViewById(R.id.btnclose);
         btnclose2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //обработка нажатия кнопки - начало
                 try {
-                    Intent intent = new Intent(Level5.this,GameLevels.class);
+                    Intent intent = new Intent(Level5.this, GameLevels.class);
                     startActivity(intent);
                     finish();
-                }
-                catch (Exception e){
+                } catch (Exception e) {
 
                 }
                 dialogEnd.dismiss();//close dialog wnd
@@ -193,11 +192,10 @@ public TextView quest, var1,var2,var3,var4;
             public void onClick(View v) {
                 //обработка нажатия кнопки - начало
                 try {
-                    Intent intent = new Intent(Level5.this, Level3.class);
+                    Intent intent = new Intent(Level5.this, GameLevels.class);
                     startActivity(intent);
                     finish();
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
 
                 }
 
@@ -209,29 +207,26 @@ public TextView quest, var1,var2,var3,var4;
         //___________________________________
 
 
-
         // bnt back start
-        Button btn_back = (Button)findViewById(R.id.btn_lvl_back);
+        Button btn_back = (Button) findViewById(R.id.btn_lvl_back);
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Level5.this,GameLevels.class);
+                    Intent intent = new Intent(Level5.this, GameLevels.class);
                     startActivity(intent);
                     finish();
-                }
-                catch (Exception e){
+                } catch (Exception e) {
                 }
             }
         });
 
 
         //закрашиваем прогресс серым цветом
-        for (int i=0; i<20; i++) {
+        for (int i = 0; i < 20; i++) {
             tv = findViewById(progress[i]);
             tv.setBackgroundResource(R.drawable.style_points);
         }
-
 
 
         View.OnClickListener onClickListener = new View.OnClickListener() {
@@ -239,14 +234,14 @@ public TextView quest, var1,var2,var3,var4;
             public void onClick(View v) {
                 switch (v.getId()) {
                     case R.id.text_set1:
-                        if (var1.getText() == resultText) count=count+1;
+                        if (var1.getText() == resultText) count = count + 1;
                         else {
                             if (count > 2) count = count - 2;
                             else count = 0;
                         }
                         break;
                     case R.id.text_set2:
-                         if (var2.getText() == resultText) count=count+1;
+                        if (var2.getText() == resultText) count = count + 1;
                         else {
                             if (count > 2) count = count - 2;
                             else count = 0;
@@ -254,7 +249,7 @@ public TextView quest, var1,var2,var3,var4;
                         break;
                     case R.id.text_set3:
 
-                         if (var3.getText() == resultText) count=count+1;
+                        if (var3.getText() == resultText) count = count + 1;
                         else {
                             if (count > 2) count = count - 2;
                             else count = 0;
@@ -262,38 +257,39 @@ public TextView quest, var1,var2,var3,var4;
                         break;
                     case R.id.text_set4:
 
-                         if (var4.getText() == resultText) count=count+1;
+                        if (var4.getText() == resultText) count = count + 1;
                         else {
                             if (count > 2) count = count - 2;
                             else count = 0;
                         }
-                       break;
+                        break;
                 }
                 roundTimer.cancel();
-                roundTimer.start();
                 //закрашиваем прогресс серым цветом
-                for (int i=0; i<20; i++) {
+                for (int i = 0; i < 20; i++) {
                     tv = findViewById(progress[i]);
                     tv.setBackgroundResource(R.drawable.style_points);
                 }
                 //закрашиваем правильные ответы зеленым
-                for (int i=0; i<count; i++) {
+                for (int i = 0; i < count; i++) {
                     tv = findViewById(progress[i]);
                     tv.setBackgroundResource(R.drawable.style_points_green);
                 }
 
 
-                if (count == 20)
-                {
+                if (count == 20) {
                     tvdend.setText(levelTimer.runTimer());
-           //         dbEditor = new DataBaseEditor(1,1,"Madx", "Levsdfsdfsdfel1", levelTimer.getSeconds(), context);
-                    startLevel=false;
+                    //         dbEditor = new DataBaseEditor(1,1,"Madx", "Levsdfsdfsdfel1", levelTimer.getSeconds(), context);
+                    startLevel = false;
                     levelTimer.resetSeconds();
                     dialogEnd.show();
-                }
-                else {
-                    logNum = new LogicNumber4Lines(quest, var1, var2, var3, var4, difficult);
-                    resultText = logNum.arrLine[0];
+                } else {
+                    setBackColor = new SetBackColor(1000, 100, this);
+                    setBackColor.start();
+                    var1.setOnClickListener(null);
+                    var2.setOnClickListener(null);
+                    var3.setOnClickListener(null);
+                    var4.setOnClickListener(null);
                 }
             }
         };
@@ -306,8 +302,48 @@ public TextView quest, var1,var2,var3,var4;
     }
 
 
+    class SetBackColor extends CountDownTimer {
+        public View.OnClickListener onCLick;
 
+        /**
+         * @param millisInFuture    The number of millis in the future from the call
+         *                          to {@link #start()} until the countdown is done and {@link #onFinish()}
+         *                          is called.
+         * @param countDownInterval The interval along the way to receive
+         *                          {@link #onTick(long)} callbacks.
+         */
 
+        public SetBackColor(long millisInFuture, long countDownInterval, View.OnClickListener v) {
+            super(millisInFuture, countDownInterval);
+            onCLick = v;
+        }
+
+        @Override
+        public void onTick(long millisUntilFinished) {
+            for (int i = 0; i < 4; i++) {
+                if (vars[i].getText() == resultText)
+                    vars[i].setBackground(getDrawable(R.drawable.style_btn_white_green_press));
+                else vars[i].setBackground(getDrawable(R.drawable.style_btn_white_red_press));
+            }
+
+            timerFinish = false;
+        }
+
+        @Override
+        public void onFinish() {
+            for (int i = 0; i < 4; i++) {
+                vars[i].setBackground(getDrawable(R.drawable.btn_stroke_white_press_blue));
+            }
+            var1.setOnClickListener(onCLick);
+            var2.setOnClickListener(onCLick);
+            var3.setOnClickListener(onCLick);
+            var4.setOnClickListener(onCLick);
+            logNum = new LogicNumber4Lines(quest, var1, var2, var3, var4, difficult);
+            resultText = logNum.arrLine[0];
+            roundTimer.start();
+            timerStarted = true;
+        }
+    }
 
 
     class RoundTimer extends CountDownTimer {
@@ -331,7 +367,7 @@ public TextView quest, var1,var2,var3,var4;
 
         @Override
         public void onTick(long millisUntilFinished) {
-            timerFinish=false;
+            timerFinish = false;
             pb.setProgress((int) millisUntilFinished / progressScale);
             if (millisUntilFinished < 2000) {
                 pb.setProgressTintList(ColorStateList.valueOf(Color.RED));
@@ -342,7 +378,7 @@ public TextView quest, var1,var2,var3,var4;
         @Override
         public void onFinish() {
 
-            count=count-2;
+            count = count - 2;
             for (int i = 0; i <= 19; i++) {
                 tv = findViewById(progress[i]);
                 tv.setBackgroundResource(R.drawable.style_points);
@@ -354,9 +390,9 @@ public TextView quest, var1,var2,var3,var4;
             }
             logNum = new LogicNumber4Lines(quest, var1, var2, var3, var4, difficult);
             resultText = logNum.arrLine[0];
-            roundTimer = new RoundTimer(millisInFuture, countDownInterval, pb_timeLeft,timerCancel);
+            roundTimer = new RoundTimer(millisInFuture, countDownInterval, pb_timeLeft, timerCancel);
             roundTimer.start();
-            timerStarted=true;
+            timerStarted = true;
 
         }
 
@@ -366,26 +402,20 @@ public TextView quest, var1,var2,var3,var4;
 
     //system btn BACK Start
     @Override
-    public void onBackPressed()
-    {
+    public void onBackPressed() {
 
 
-        if (backPressedTime + 2000 > System.currentTimeMillis())
-        {
-            try
-            {
+        if (backPressedTime + 2000 > System.currentTimeMillis()) {
+            try {
                 backToast.cancel();
-                Intent intent = new Intent(Level5.this,GameLevels.class);
-                startActivity(intent);finish();
-            }
-            catch (Exception e)
-            {
+                Intent intent = new Intent(Level5.this, GameLevels.class);
+                startActivity(intent);
+                finish();
+            } catch (Exception e) {
 
             }
-        }
-        else
-        {
-            backToast = Toast.makeText(getBaseContext(),"Нажмите ещё раз, чтобы выйти из уровня",Toast.LENGTH_LONG);
+        } else {
+            backToast = Toast.makeText(getBaseContext(), "Нажмите ещё раз, чтобы выйти из уровня", Toast.LENGTH_LONG);
             backToast.show();
         }
         backPressedTime = System.currentTimeMillis();

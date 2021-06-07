@@ -202,7 +202,7 @@
     </string-array>
 
 
-    <string-array name="NorthCenterAmerCountries">
+    <string-array name="northCenterAmerCountries">
 
         <item>Белиз</item>
         <item>Бельмопан</item>
@@ -234,7 +234,7 @@
     </string-array>
 
 
-    <string-array name="CaribbeanCountries">
+    <string-array name="caribbeanCountries">
 
         <item>Ангилья</item>
         <item>Валли</item>
@@ -289,7 +289,7 @@
 
 
 
-    <string-array name="SouthAmerCountries">
+    <string-array name="southAmerCountries">
 
         <item>Аргентина</item>
         <item>Буэнос-Айрес</item>
@@ -326,7 +326,7 @@
 
 
 
-    <string-array name="AfricaCountries">
+    <string-array name="africaCountries">
 
         <item>Алжир</item>
         <item>Алжир</item>

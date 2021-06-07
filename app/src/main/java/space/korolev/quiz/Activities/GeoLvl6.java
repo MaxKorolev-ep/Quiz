@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -21,10 +22,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import space.korolev.quiz.DataBaseEditor;
 import space.korolev.quiz.LevelTimer;
-import space.korolev.quiz.LogicNumber4Lines;
+import space.korolev.quiz.LogicCoutry4Lines;
 import space.korolev.quiz.R;
 
-public class Level4 extends AppCompatActivity {
+
+public class GeoLvl6 extends AppCompatActivity {
 
     Dialog dialog;
     Dialog dialogEnd;
@@ -38,15 +40,17 @@ public class Level4 extends AppCompatActivity {
 
     public RoundTimer roundTimer;
     public SetBackColor setBackColor;
+
     public boolean startLevel;
     public LevelTimer levelTimer;
-
 
     public int count = 0;// счетчик правильных ответов
     private long backPressedTime;
 
     public String resultText;
-    public final long millisInFuture = 4000;
+
+    //settings of timer
+    public final long millisInFuture = 6000;
     public final long countDownInterval = 500;
     public final int progressScale = (int) millisInFuture / 100;
 
@@ -56,17 +60,19 @@ public class Level4 extends AppCompatActivity {
     TextView tv;
     public TextView tvdend;
     public TextView tv_levelTime;
-    public TextView[] vars;
 
     public TextView quest, var1, var2, var3, var4;
 
-    public LogicNumber4Lines logNum;
+    public LogicCoutry4Lines logCountry;
     // add array of progress start\
     public int[] progress = {
             R.id.point1, R.id.point2, R.id.point3, R.id.point4, R.id.point5, R.id.point6, R.id.point7,
             R.id.point8, R.id.point9, R.id.point10, R.id.point11, R.id.point12, R.id.point13, R.id.point14, R.id.point15,
             R.id.point16, R.id.point17, R.id.point18, R.id.point19, R.id.point20,};
     // add array of progress end
+
+    public String[] countries;
+    public TextView[] vars;
 
 
     @Override
@@ -78,17 +84,18 @@ public class Level4 extends AppCompatActivity {
         var2 = findViewById(R.id.text_set2);
         var3 = findViewById(R.id.text_set3);
         var4 = findViewById(R.id.text_set4);
+        countries = getResources().getStringArray(R.array.caribbeanCountries);
 
-        vars = new TextView[]{var1, var2, var3, var4};
+        Context context = this;
 
-        Context context = Level4.this;
-
-
-        logNum = new LogicNumber4Lines(quest, var1, var2, var3, var4, 1);
-        resultText = logNum.arrLine[0];
-
+        //initialize logic
+        logCountry = new LogicCoutry4Lines(quest, var1, var2, var3, var4, countries);
+        Log.d("Text", "Country" + quest.getText());
+        resultText = logCountry.strResult;
+        Log.d("Text", "City" + resultText);
         // add array of progress start\
 
+        vars = new TextView[]{var1, var2, var3, var4};
 
         tv_levelTime = findViewById(R.id.tv_roundtime);
         tv_levels = findViewById(R.id.tx_levels);
@@ -120,7 +127,7 @@ public class Level4 extends AppCompatActivity {
             public void onClick(View v) {
                 //обработка нажатия кнопки - начало
                 try {
-                    Intent intent = new Intent(Level4.this, GameLevels.class);
+                    Intent intent = new Intent(GeoLvl6.this, GameLevels.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {
@@ -170,7 +177,7 @@ public class Level4 extends AppCompatActivity {
             public void onClick(View v) {
                 //обработка нажатия кнопки - начало
                 try {
-                    Intent intent = new Intent(Level4.this, GameLevels.class);
+                    Intent intent = new Intent(GeoLvl6.this, GameLevels.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {
@@ -189,13 +196,12 @@ public class Level4 extends AppCompatActivity {
             public void onClick(View v) {
                 //обработка нажатия кнопки - начало
                 try {
-                    Intent intent = new Intent(Level4.this, Level5.class);
+                    Intent intent = new Intent(GeoLvl6.this, GameLevels.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {
 
                 }
-
                 dialogEnd.dismiss();//close dialog wnd
             }
             //обработка нажатия кнопки - конец
@@ -210,7 +216,7 @@ public class Level4 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Level4.this, GameLevels.class);
+                    Intent intent = new Intent(GeoLvl6.this, GameLevels.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {
@@ -229,17 +235,24 @@ public class Level4 extends AppCompatActivity {
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Log.d("COUNTR","Num  "+count);
+                Log.d("Text", "" + resultText);
                 switch (v.getId()) {
                     case R.id.text_set1:
-                        if (var1.getText() == resultText) count = count + 1;
-                        else {
+                        if (var1.getText() == resultText) {
+                            //                      var1.setTextColor(getColor(R.color.green80));
+                            count = count + 1;
+                        } else {
+                            //                           var1.setTextColor(getColor(R.color.red80));
                             if (count > 2) count = count - 2;
                             else count = 0;
                         }
                         break;
                     case R.id.text_set2:
-                        if (var2.getText() == resultText) count = count + 1;
-                        else {
+                        if (var2.getText() == resultText) {
+                            //             var2.setBackground(getDrawable(R.drawable.btn_stroke_white_press_green)); //(R.drawable.btn_stroke_white_press_green);
+                            count = count + 1;
+                        } else {
                             if (count > 2) count = count - 2;
                             else count = 0;
                         }
@@ -262,6 +275,7 @@ public class Level4 extends AppCompatActivity {
                         break;
                 }
                 roundTimer.cancel();
+
                 //закрашиваем прогресс серым цветом
                 for (int i = 0; i < 20; i++) {
                     tv = findViewById(progress[i]);
@@ -288,7 +302,12 @@ public class Level4 extends AppCompatActivity {
                     var3.setOnClickListener(null);
                     var4.setOnClickListener(null);
                 }
+
+                //    Log.d("COUNTER","Text:"+resultText);
+                //       var1.setBackground(getDrawable(R.drawable.btn_stroke_white_press_blue));
+
             }
+
         };
 
         var1.setOnClickListener(onClickListener);
@@ -335,8 +354,8 @@ public class Level4 extends AppCompatActivity {
             var2.setOnClickListener(onCLick);
             var3.setOnClickListener(onCLick);
             var4.setOnClickListener(onCLick);
-            logNum = new LogicNumber4Lines(quest, var1, var2, var3, var4, 1);
-            resultText = logNum.arrLine[0];
+            logCountry = new LogicCoutry4Lines(quest, var1, var2, var3, var4, countries);
+            resultText = logCountry.strResult;
             roundTimer.start();
             timerStarted = true;
         }
@@ -385,27 +404,22 @@ public class Level4 extends AppCompatActivity {
                 tv = findViewById(progress[i]);
                 tv.setBackgroundResource(R.drawable.style_points_green);
             }
-            logNum = new LogicNumber4Lines(quest, var1, var2, var3, var4, 1);
-            resultText = logNum.arrLine[0];
+            //  logCountry = new LogicCoutry4Lines(quest, var1, var2, var3, var4, countries);
+            //resultText=logCountry.strResult;
             roundTimer = new RoundTimer(millisInFuture, countDownInterval, pb_timeLeft, timerCancel);
             roundTimer.start();
             timerStarted = true;
-
         }
-
-
     }
 
 
     //system btn BACK Start
     @Override
     public void onBackPressed() {
-
-
         if (backPressedTime + 2000 > System.currentTimeMillis()) {
             try {
                 backToast.cancel();
-                Intent intent = new Intent(Level4.this, GameLevels.class);
+                Intent intent = new Intent(GeoLvl6.this, GameLevels.class);
                 startActivity(intent);
                 finish();
             } catch (Exception e) {
@@ -419,5 +433,6 @@ public class Level4 extends AppCompatActivity {
     }
     //system btn BACK End
 
-
 }
+
+
