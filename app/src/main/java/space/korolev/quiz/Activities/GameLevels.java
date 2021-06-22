@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -59,7 +58,7 @@ public class GameLevels extends AppCompatActivity {
 
 
         //btn 1 lvl = start
-        TextView textView1 = (TextView) findViewById(R.id.textView1);
+        Button textView1 = (Button) findViewById(R.id.textView1);
         textView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,7 +74,7 @@ public class GameLevels extends AppCompatActivity {
         //btn 1 lvl = end
 
         //btn 2 lvl = start
-        TextView textView2 = (TextView) findViewById(R.id.textView2);
+        Button textView2 = (Button) findViewById(R.id.textView2);
         textView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,7 +90,7 @@ public class GameLevels extends AppCompatActivity {
         //btn 2 lvl = end
 
         //btn 3 lvl = start
-        TextView textView3 = (TextView) findViewById(R.id.textView3);
+        Button textView3 = (Button) findViewById(R.id.textView3);
         textView3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,7 +106,7 @@ public class GameLevels extends AppCompatActivity {
         //btn 3 lvl = end
 
         //btn 4 lvl = start
-        TextView textView4 = (TextView) findViewById(R.id.textView4);
+        Button textView4 = (Button) findViewById(R.id.textView4);
         textView4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -125,7 +124,7 @@ public class GameLevels extends AppCompatActivity {
         //btn 4 lvl = end
 
         //btn 5 lvl = start
-        TextView textView5 = (TextView) findViewById(R.id.textView5);
+        Button textView5 = (Button) findViewById(R.id.textView5);
         textView5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -143,8 +142,8 @@ public class GameLevels extends AppCompatActivity {
         //btn 5 lvl = end
 
         //btn 6 lvl = start
-        TextView textView6 = (TextView) findViewById(R.id.textView6);
-        textView6.setOnClickListener(new View.OnClickListener() {
+        Button button6_europe = (Button) findViewById(R.id.button6_europe);
+        button6_europe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
@@ -161,8 +160,8 @@ public class GameLevels extends AppCompatActivity {
         //btn 6 lvl = end
 
         //btn 7 lvl = start
-        TextView textView7 = (TextView) findViewById(R.id.textView7);
-        textView7.setOnClickListener(new View.OnClickListener() {
+        Button button7_asia = (Button) findViewById(R.id.button7_asia);
+        button7_asia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
@@ -179,8 +178,8 @@ public class GameLevels extends AppCompatActivity {
         //btn 7 lvl = end
 
         //btn 8 lvl = start
-        TextView textView8 = (TextView) findViewById(R.id.textView8);
-        textView8.setOnClickListener(new View.OnClickListener() {
+        Button button8_africa = (Button) findViewById(R.id.button8_africa);
+        button8_africa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
@@ -197,8 +196,8 @@ public class GameLevels extends AppCompatActivity {
         //btn 8 lvl = end
 
         //btn 9 lvl = start
-        TextView textView9 = (TextView) findViewById(R.id.textView9);
-        textView9.setOnClickListener(new View.OnClickListener() {
+        Button button9_northAmerica = (Button) findViewById(R.id.button9_northAmerica);
+        button9_northAmerica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
@@ -215,8 +214,8 @@ public class GameLevels extends AppCompatActivity {
         //btn 9 lvl = end
 
         //btn 10 lvl = start
-        TextView textView10 = (TextView) findViewById(R.id.textView10);
-        textView10.setOnClickListener(new View.OnClickListener() {
+        Button button10_southAmerica = (Button) findViewById(R.id.button10_southAmerica);
+        button10_southAmerica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
@@ -231,9 +230,9 @@ public class GameLevels extends AppCompatActivity {
             }
         });
         //btn 10 lvl = end
-
+/*
         //btn 11 lvl = starta
-        TextView textView11 = (TextView) findViewById(R.id.textView11);
+        Button textView11 = (Button) findViewById(R.id.textView11);
         textView11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -248,7 +247,7 @@ public class GameLevels extends AppCompatActivity {
                 }
             }
         });
-        //btn 11 lvl = end
+*/
 
     }
 

@@ -26,7 +26,7 @@ import space.korolev.quiz.LogicCoutry4Lines;
 import space.korolev.quiz.R;
 
 
-public class GeoLvl5 extends AppCompatActivity {
+public class TestCountries extends AppCompatActivity {
 
     Dialog dialog;
     Dialog dialogEnd;
@@ -127,7 +127,7 @@ public class GeoLvl5 extends AppCompatActivity {
             public void onClick(View v) {
                 //обработка нажатия кнопки - начало
                 try {
-                    Intent intent = new Intent(GeoLvl5.this, GameLevels.class);
+                    Intent intent = new Intent(TestCountries.this, GameLevels.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {
@@ -177,7 +177,7 @@ public class GeoLvl5 extends AppCompatActivity {
             public void onClick(View v) {
                 //обработка нажатия кнопки - начало
                 try {
-                    Intent intent = new Intent(GeoLvl5.this, GameLevels.class);
+                    Intent intent = new Intent(TestCountries.this, GameLevels.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {
@@ -196,7 +196,7 @@ public class GeoLvl5 extends AppCompatActivity {
             public void onClick(View v) {
                 //обработка нажатия кнопки - начало
                 try {
-                    Intent intent = new Intent(GeoLvl5.this, GameLevels.class);
+                    Intent intent = new Intent(TestCountries.this, GameLevels.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {
@@ -216,7 +216,7 @@ public class GeoLvl5 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(GeoLvl5.this, GameLevels.class);
+                    Intent intent = new Intent(TestCountries.this, GameLevels.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {
@@ -419,7 +419,7 @@ public class GeoLvl5 extends AppCompatActivity {
         if (backPressedTime + 2000 > System.currentTimeMillis()) {
             try {
                 backToast.cancel();
-                Intent intent = new Intent(GeoLvl5.this, GameLevels.class);
+                Intent intent = new Intent(TestCountries.this, GameLevels.class);
                 startActivity(intent);
                 finish();
             } catch (Exception e) {

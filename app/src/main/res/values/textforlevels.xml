@@ -41,6 +41,8 @@
         <item>Афины</item>
         <item>Дания</item>
         <item>Копенгаген</item>
+        <item>Кипр</item>
+        <item>Никосия</item>
         <item>Ирландия</item>
         <item>Дублин</item>
         <item>Исландия</item>
@@ -139,14 +141,14 @@
         <item>Тегеран</item>
         <item>Йемен</item>
         <item>Сана</item>
+        <item>Россия</item>
+        <item>Москва</item>
         <item>Казахстан</item>
         <item>Астана</item>
         <item>Камбоджа</item>
         <item>Пномпень</item>
         <item>Катар</item>
         <item>Доха</item>
-        <item>Кипр</item>
-        <item>Никосия</item>
         <item>Киргизия</item>
         <item>Бишкек</item>
         <item>Китай</item>
@@ -163,6 +165,8 @@
         <item>Куала-Лумпур</item>
         <item>Мальдивы</item>
         <item>Мале</item>
+        <item>Непал</item>
+        <item>Катманду</item>
         <item>Монголия</item>
         <item>Улан-Батор</item>
         <item>Мьянма</item>
@@ -204,9 +208,16 @@
 
 
     <string-array name="northCenterAmerCountries">
-
+        <item>Антигуа и Барбуда</item>
+        <item>Сент-Джонс</item>
+        <item>Багамские острова</item>
+        <item>Нассау</item>
+        <item>Барбадос</item>
+        <item>Бриджтаун</item>
         <item>Белиз</item>
         <item>Бельмопан</item>
+        <item>Гаити</item>
+        <item>Порт-о-Пренс</item>
         <item>Бермудские острова</item>
         <item>Гамильтон</item>
         <item>Гватемала</item>
@@ -215,12 +226,22 @@
         <item>Тегусигальпа</item>
         <item>Гренландия</item>
         <item>Нуук</item>
+        <item>Гренада</item>
+        <item>Сент-Джорджес</item>
+        <item>Доминика</item>
+        <item>Розо</item>
         <item>Канада</item>
         <item>Оттава</item>
+        <item>Доминиканская Республика</item>
+        <item>Санто-Доминго</item>
         <item>Коста-Рика</item>
         <item>Сан-Хосе</item>
+        <item>Куба</item>
+        <item>Гавана</item>
         <item>Мексика</item>
         <item>Мехико</item>
+        <item>Никарагуа</item>
+        <item>Манагуа</item>
         <item>Монтсеррат</item>
         <item>Плимут</item>
         <item>Никарагуа</item>
@@ -229,64 +250,21 @@
         <item>Панама</item>
         <item>Сальвадор</item>
         <item>Сан-Сальвадор</item>
-        <item>Соединенные Штаты Америки</item>
-        <item>Вашингтон</item>
-
-    </string-array>
-
-
-    <string-array name="caribbeanCountries">
-
-        <item>Ангилья</item>
-        <item>Валли</item>
-        <item>Антигуа и Барбуда</item>
-        <item>Сент-Джонс</item>
-        <item>Аруба</item>
-        <item>Ораньестад</item>
-        <item>Багамы</item>
-        <item>Нассау</item>
-        <item>Барбадос</item>
-        <item>Бриджтаун</item>
-        <item>Британские Виргинские острова</item>
-        <item>Род-Таун</item>
-        <item>Виргинские острова США</item>
-        <item>Шарлотта-Амалия</item>
-        <item>Гаити</item>
-        <item>Порт-о-Пренс</item>
-        <item>Гваделупа</item>
-        <item>Бас-Тер</item>
-        <item>Гренада</item>
-        <item>Сент-Джорджес</item>
-        <item>Доминика</item>
-        <item>Розо</item>
-        <item>Доминиканская Республика</item>
-        <item>Санто-Доминго</item>
-        <item>Каймановы острова</item>
-        <item>Джордж таун</item>
-        <item>Куба</item>
-        <item>Гавана</item>
-        <item>Кюрасао</item>
-        <item>Виллемстад</item>
-        <item>Пуэрто-Рико</item>
-        <item>Сан-Хуан</item>
-        <item>Сен-Бартелеми</item>
-        <item>Густавия</item>
-        <item>Сен-Мартен</item>
-        <item>Мариго</item>
+        <item>Сент-Люсия</item>
+        <item>Кастри</item>
         <item>Сент-Винсент и Гренадины</item>
         <item>Кингстаун</item>
         <item>Сент-Китс и Невис</item>
         <item>Бастер</item>
-        <item>Сент-Люсия</item>
-        <item>Кастри</item>
-        <item>Тёркс и Кайкос</item>
-        <item>Коберн-Таун</item>
+        <item>Соединенные Штаты Америки</item>
+        <item>Вашингтон</item>
         <item>Тринидад и Тобаго</item>
         <item>Порт-оф-Спейн</item>
         <item>Ямайка</item>
         <item>Кингстон</item>
-
     </string-array>
+
+
 
 
 
@@ -312,38 +290,51 @@
         <item>Парамарибо</item>
         <item>Уругвай</item>
         <item>Монтевидео</item>
-        <item>Фолклендские острова</item>
-        <item>Стэнли</item>
-        <item>Французская Гвиана</item>
-        <item>Кайенна</item>
         <item>Чили</item>
         <item>Сантьяго</item>
         <item>Эквадор</item>
         <item>Кито</item>
-        <item>Южная Джорджия</item>
-        <item>Грютвикен</item>
-
-
+        <item>Ангилья</item>
+        <item>Валли</item>
+        <item>Аруба</item>
+        <item>Ораньестад</item>
+        <item>Британские Виргинские острова</item>
+        <item>Род-Таун</item>
+        <item>Виргинские острова США</item>
+        <item>Шарлотта-Амалия</item>
+        <item>Гваделупа</item>
+        <item>Бас-Тер</item>
+        <item>Каймановы острова</item>
+        <item>Джордж таун</item>
+        <item>Кюрасао</item>
+        <item>Виллемстад</item>
+        <item>Пуэрто-Рико</item>
+        <item>Сан-Хуан</item>
+        <item>Сен-Бартелеми</item>
+        <item>Густавия</item>
+        <item>Сен-Мартен</item>
+        <item>Мариго</item>
+        <item>Тёркс и Кайкос</item>
+        <item>Коберн-Таун</item>
     </string-array>
-
 
 
     <string-array name="africaCountries">
 
         <item>Алжир</item>
         <item>Алжир</item>
+        <item>Амбазония</item>
+        <item>Буза</item>
         <item>Ангола</item>
         <item>Луанда</item>
         <item>Бенин</item>
         <item>Порто-Ново</item>
         <item>Ботсвана</item>
         <item>Габороне</item>
-        <item>Британская территория в Индийском океане</item>
-        <item>Диего-Гарсия</item>
         <item>Буркина-Фасо</item>
         <item>Уагадугу</item>
         <item>Бурунди</item>
-        <item>Бужумбура</item>
+        <item>Гитега</item>
         <item>Габон</item>
         <item>Либревиль</item>
         <item>Гамбия</item>
@@ -442,7 +433,6 @@
         <item>Аддис-Абеба</item>
         <item>ЮАР</item>
         <item>Претория</item>
-
 
     </string-array>
 

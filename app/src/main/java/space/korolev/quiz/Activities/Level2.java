@@ -128,7 +128,7 @@ public class Level2 extends AppCompatActivity {
         ImageView imgd = dialog.findViewById(R.id.previewimg1);
         imgd.setImageResource(R.drawable.previewlevel2img);
         TextView tvd = dialog.findViewById(R.id.textdescr1);
-        tvd.setText(R.string.leveltwo);
+        tvd.setText(R.string.level2);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));//transparent background of dialog wnd
         dialog.setCancelable(false); //окно нельзя закрыть кропкой назад
 
