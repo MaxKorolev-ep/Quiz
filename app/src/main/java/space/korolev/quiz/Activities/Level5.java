@@ -95,7 +95,7 @@ public class Level5 extends AppCompatActivity {
 
         tv_levelTime = findViewById(R.id.tv_roundtime);
         tv_levels = findViewById(R.id.tx_levels);
-        tv_levels.setText(R.string.level4);
+        tv_levels.setText(R.string.level5);
 
         pb_timeLeft = findViewById(R.id.pb_TimeLeft);
         //timer settings

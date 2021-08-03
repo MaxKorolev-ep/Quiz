@@ -142,15 +142,12 @@
                             android:textColor="@color/white"
                             android:textSize="24sp"
                             android:textStyle="bold" />
-
-<<<<<<< HEAD
-
-                    </LinearLayout>
+    </LinearLayout>
                 </HorizontalScrollView>
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/line2"
+                    android:id="@+id/line3"
                     android:layout_width="match_parent"
                     android:layout_height="230dp"
                     android:layout_marginTop="40dp"
@@ -162,8 +159,8 @@
                         android:id="@+id/button9_northAmerica"
                         android:layout_width="125dp"
                         android:layout_height="82dp"
-                        android:layout_marginStart="56dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="48dp"
+                        android:layout_marginTop="8dp"
                         android:background="@color/transparent"
                         android:gravity="center"
                         android:text="9"
@@ -172,7 +169,6 @@
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
-
 
                     <Button
                         android:id="@+id/button6_europe"
@@ -239,7 +235,7 @@
 
 
             </LinearLayout>
-=======
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -324,9 +320,5 @@
 
 
                 </LinearLayout>
-            </ScrollView>
->>>>>>> fd73abf8bda6724f0c6a3535be854c6314d87800
 
-        </LinearLayout>
-    </LinearLayout>
 </RelativeLayout>

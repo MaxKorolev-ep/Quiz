@@ -159,15 +159,6 @@ public class LogicNumber4Lines {
                 arrResult[3] = Integer.toString(random.nextInt(163) - 81);
         }
 
-
-
-
-
-
-
-
-
-
         if (num == 2) { // 9*9*3 = 243, 243*2+1=487
             arrResult[1] = Integer.toString(random.nextInt(487) - 243);
             while (arrResult[1] == arrResult[0])
@@ -203,7 +194,6 @@ public class LogicNumber4Lines {
         arrText[4] = arrLine[1];
         return arrText;
     }
-
 
     public char mathOper() {
         operation = random.nextInt(4);

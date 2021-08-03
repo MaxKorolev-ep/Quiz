@@ -313,7 +313,7 @@ public class Level2 extends AppCompatActivity {
                     if (count == 20) {
                         if (count == 20) {
                             tvdend.setText(levelTimer.runTimer());
-                            dbEditor = new DataBaseEditor(1, 1, "Madx", "Levsdfsdfsdfel1", levelTimer.getSeconds(), context);
+                            dbEditor = new DataBaseEditor(2, 2, "ForGlobalTest", "Level2", levelTimer.getSeconds(), context);
                             startLevel = false;
                             levelTimer.resetSeconds();
                             dialogEnd.show();
