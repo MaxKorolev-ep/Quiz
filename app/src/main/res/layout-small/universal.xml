@@ -242,20 +242,21 @@
                     android:id="@+id/img_left"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
-                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
-                    android:scaleType="centerCrop"
+                    android:layout_weight="1"
                     android:background="@drawable/style_imguniversal"
-                    android:src="@drawable/imgtest"
-                    android:layout_marginLeft="5dp"/>
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/imgtest" />
+
                 <ImageView
                     android:id="@+id/img_right"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
-                    android:layout_weight="1"
                     android:layout_marginRight="5dp"
-                    android:scaleType="centerCrop"
+                    android:layout_weight="1"
                     android:background="@drawable/style_imguniversal"
+                    android:scaleType="fitCenter"
                     android:src="@drawable/imgtest" />
 
 

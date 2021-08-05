@@ -307,7 +307,7 @@ public class Level1 extends AppCompatActivity {
                     }
                     if (count == 20) {
                         tvdend.setText(levelTimer.runTimer());
-                        dbEditor = new DataBaseEditor(1, 1, "ForGlobalTestDb", "Level 1", levelTimer.getSeconds(), context);
+                        dbEditor = new DataBaseEditor(1, 1, "Fob", "Level 1", levelTimer.getSeconds(), context);
                         startLevel = false;
                         levelTimer.resetSeconds();
                         dialogEnd.show();
@@ -391,7 +391,7 @@ public class Level1 extends AppCompatActivity {
                     if (count == 20) {
                         tvdend.setText(levelTimer.runTimer());
                         //    init();
-                        dbEditor = new DataBaseEditor(1, 1, "Madx", "Levsdfsdfsdfel1", levelTimer.getSeconds(), context);
+                        dbEditor = new DataBaseEditor(1, 1, "Fob", "Level 1", levelTimer.getSeconds(), context);
                         startLevel = false;
                         levelTimer.resetSeconds();
                         dialogEnd.show();

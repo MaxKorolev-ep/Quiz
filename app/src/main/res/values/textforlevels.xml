@@ -206,7 +206,6 @@
 
     </string-array>
 
-
     <string-array name="northCenterAmerCountries">
         <item>Антигуа и Барбуда</item>
         <item>Сент-Джонс</item>
@@ -264,10 +263,6 @@
         <item>Кингстон</item>
     </string-array>
 
-
-
-
-
     <string-array name="southAmerCountries">
 
         <item>Аргентина</item>
@@ -317,7 +312,6 @@
         <item>Тёркс и Кайкос</item>
         <item>Коберн-Таун</item>
     </string-array>
-
 
     <string-array name="africaCountries">
 
