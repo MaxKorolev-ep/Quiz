@@ -24,7 +24,7 @@ public class LogicCoutry4Lines {
         strResult = arrText[5];
     }
 
-    public String[] randomCountry() {
+    public void randomCountry() {
         randNum = random.nextInt(arrCountry.length) + 2;
         while (randNum % 2 == 1) randNum = random.nextInt(arrCountry.length) + 2;
         randNum = randNum - 2;
@@ -32,8 +32,12 @@ public class LogicCoutry4Lines {
         arrResult[0] = arrCountry[randNum + 1]; //captain city
 
         randNum = random.nextInt(arrCountry.length) + 2;
-        while (randNum % 2 == 0 || arrResult[0] == arrCountry[randNum - 2])
+        Log.d("ResArr", "randnumUnredacted " + randNum);
+        Log.d("ResArr", "length " + arrCountry.length);
+        while (randNum % 2 == 0 || arrResult[0] == arrCountry[randNum - 2]) {
             randNum = random.nextInt(arrCountry.length) + 2;
+            Log.d("ResArr", "randnumRedacted " + randNum);
+        }
         arrResult[1] = arrCountry[randNum - 2]; //captain city var1
         Log.d("ResArr", "var1 " + randNum);
 
@@ -68,7 +72,6 @@ public class LogicCoutry4Lines {
 
         arrText[4] = arrResult[4];//question
 
-        return arrText;
     }
 
 

@@ -1,5 +1,6 @@
 package space.korolev.quiz.Activities;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -76,6 +77,7 @@ public class Level1 extends AppCompatActivity {
     //_________________________
 
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
